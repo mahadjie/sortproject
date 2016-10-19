@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="sortApp" ng-controller="ageCtrl">
+
+<h3>Michael's Sorting System Using Angular JS:</h3>
+<b>Order By:</b> <select ng-model='order'>
+  <option>name</option>
+  <option>age</option>
+</select>
+<ul>
+  <li ng-repeat="x in names | orderBy:order">
+    {{ x.name + ', ' + x.age}}
+  </li>
+</ul>
+
+</div>
+
+<script>
+angular.module('sortApp', []).controller('ageCtrl', function($scope) {
+    $scope.names = [
+        {name:'Jeff',age:21},
+        {name:'Carl',age:8},
+        {name:'Andrews',age:20},
+        {name:'Paul',age:38},
+        {name:'Mohammed',age:84},
+        {name:'Christian',age:10},
+        {name:'Kwame',age:12},
+        {name:'Naomi',age:19},
+        {name:'Zaid',age:55}
+        ];
+
+ 
+});
+</script>
+
+</body>
+</html>
+
